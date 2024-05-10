@@ -48,8 +48,8 @@ jobs:
       - name: Commit version increment
         if: ${{ success() }}
         run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
+          git config --global user.email "neerajjada@gmail.com"
+          git config --global user.name "neerajjada"
           git add "${{ github.workspace }}/coit-backend1/Release-Version/Version.txt"
           git commit -m "Increment version to ${{ steps.increment-version.outputs.new-version }}" 
       - name: Push changes to develop branch

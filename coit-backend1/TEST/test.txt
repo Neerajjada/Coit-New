@@ -4,4 +4,4 @@ retest for increase from 1.1.2 to next
 test for pull request with request for approval
 test with altering branch protection rules with git token
 merging from a different branch using pull request
-New test
+New test with changes

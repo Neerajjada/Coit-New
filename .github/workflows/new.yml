@@ -27,7 +27,7 @@ jobs:
         run: |
                 $version = Get-Content "${{ github.workspace }}\coit-backend1\Release-Version/Version.yml" | Select-String -Pattern "version:" | ForEach-Object { $_ -replace 'version:\s*', '' }
                 Write-Output "Version_current: $version"
-                echo "::set-output name=version::$version"
+                echo "version::$version" >> $GITHUB_OUTPUT
         shell: PowerShell
         
       - name: Increment Version
@@ -41,7 +41,7 @@ jobs:
                 $incremented_version[-1] = [int]$incremented_version[-1]+1
                 $incremented_version = $incremented_version -join'.'
                 Write-Output "Incremented Version: $incremented_version"
-                echo "::set-output name=incremented_version::$incremented_version"
+                echo "incremented_version::$incremented_version" >> $GITHUB_OUTPUT
         env:
           INPUT_VERSION: ${{ steps.read_version.outputs.version }}
         shell: PowerShell

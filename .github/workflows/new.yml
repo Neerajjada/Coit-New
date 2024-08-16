@@ -3,7 +3,7 @@ name: New-Windows Hosted
 on:
   push:
    branches:
-      - develop
+      - 'develop'
    paths:                           
       - 'coit-backend1/**'
   workflow_dispatch:
